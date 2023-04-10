@@ -38,3 +38,21 @@ footer button {
   width: 50%;
   height: 36px;
 }
+
+#info {
+  display: flex;
+  flex-direction: column;
+}
+
+#detail span{
+  padding: 16px;
+}
+
+#table {
+  padding-top: 16px;
+}
+
+input {
+  margin-right: 8px;
+  width: auto;
+}

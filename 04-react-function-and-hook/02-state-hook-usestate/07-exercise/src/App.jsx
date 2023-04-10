@@ -2,37 +2,39 @@ import React, { useState } from 'react';
 
 function App() {
     // adding state here.
+    const [choices, setChoices ] = useState();
 
   const handleClick = (value) => {
     // code here.
+    setChoices(value);
   };
 
   return (
     <div>
-      <button>Fullname</button>
-      <button>Age</button>
-      <button>Picture</button>
-      <DisplayInfo />
+      <button onClick={() => handleClick('Fullname')}>Fullname</button>
+      <button onClick={() => handleClick('Age')}>Age</button>
+      <button onClick={() => handleClick('Picture')}>Picture</button>
+      <DisplayInfo choices={choices}/>
     </div>
   );
 }
 
 function DisplayInfo(props) {
 
-  let ___;
-  if (___ === 'Fullname') {
-    ___ = <h2>John Doe</h2>;
-  } else if (___ === 'Age') {
-    ___ = <h2>30</h2>;
-  } else if (___ === 'Picture') {
-    ___ = <img src="https://via.placeholder.com/150" alt="Placeholder" />;
+  let temp;
+  if (props.choices === 'Fullname') {
+    temp = <h2>John Doe</h2>;
+  } else if (props.choices === 'Age') {
+    temp = <h2>30</h2>;
+  } else if (props.choices === 'Picture') {
+    temp = <img src="https://via.placeholder.com/150" alt="Placeholder" />;
   } else {
-    ___ = <p>Please select an option.</p>;
+    temp = <p>Please select an option.</p>;
   }
 
   return (
     <div>
-      {___}
+      {temp}
     </div>
   );
 }
